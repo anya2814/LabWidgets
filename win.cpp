@@ -1,6 +1,6 @@
 #include "win.h"
 
-Window::Window()
+Window::Window()        // конструктор окна
 {
     codec = QTextCodec::codecForName("UTF-8");
     this->setWindowTitle(codec->toUnicode("Обработка событий"));

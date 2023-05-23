@@ -10,8 +10,8 @@ class Window : public QWidget
 {
 protected:
     QTextCodec *codec;
-    Area * area; // область отображения рисунка
-    QPushButton * btn;
+    Area * area;            // область отображения рисунка
+    QPushButton * btn;      // кнопка
 public:
     Window();
 };

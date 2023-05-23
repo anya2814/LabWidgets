@@ -3,21 +3,23 @@
 
 #include "figura.h"
 
-class Area : public QWidget
+class Area : public QWidget         // класс окна, в котором рисуются фигуры
 {
     int myTimer; // идентификатор таймера
     float alpha; // угол поворота
+
 public:
-    Area(QWidget *parent = 0);
-    ~Area();
-    MyLine *myline;
-    MyRect *myrect;
+    Area(QWidget *parent = 0);      // конструктор
+    ~Area();                        // деструктор
+    MyLine *myline;                 // указатель на объект линия
+    MyRect *myrect;                 // указатель на объект прямоугольник
+
 protected:
     // обработчики событий
-    void paintEvent(QPaintEvent *event);
-    void timerEvent(QTimerEvent *event);
-    void showEvent(QShowEvent *event);
-    void hideEvent(QHideEvent *event);
+    void paintEvent(QPaintEvent *event);    // рисование пошагово перемещающихся фигур
+    void timerEvent(QTimerEvent *event);    // инициация перерисовки Холста
+    void showEvent(QShowEvent *event);      // включение таймера
+    void hideEvent(QHideEvent *event);      // выключение таймера
 };
 
 #endif // AREA_H

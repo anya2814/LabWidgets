@@ -8,12 +8,12 @@ Area::Area(QWidget *parent):QWidget(parent) // конструктор класс
     alpha=0;                                // угол поворота задаем равным 0
 }
 
-void Area::showEvent(QShowEvent *)
+void Area::showEvent(QShowEvent *)          // включение таймера
 {
     myTimer=startTimer(50);                 // создать таймер
 }
 
-void Area::paintEvent(QPaintEvent *)
+void Area::paintEvent(QPaintEvent *)        // рисование пошагово перемещающихся фигур
 {
     QPainter painter(this);                 // создаем объект QPainter
     painter.setPen(Qt::red);                // задаем цвет рисования
@@ -21,7 +21,7 @@ void Area::paintEvent(QPaintEvent *)
     myrect->move(alpha*(-0.5),&painter);    // вызываем метод вращения для прямоугольника
 }
 
-void Area::timerEvent(QTimerEvent *event)
+void Area::timerEvent(QTimerEvent *event)   // инициация перерисовки Холста
 {
     if (event->timerId() == myTimer)        // если наш таймер
     {
@@ -33,7 +33,7 @@ void Area::timerEvent(QTimerEvent *event)
                                             // обработки
 }
 
-void Area::hideEvent(QHideEvent *)
+void Area::hideEvent(QHideEvent *)          // выключение таймера
 {
     killTimer(myTimer);                     // уничтожить таймер
 }
