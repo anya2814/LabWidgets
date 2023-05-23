@@ -25,7 +25,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        win.cpp
+        win.cpp \
+    figura.cpp \
+    area.cpp
 
 HEADERS += \
-        win.h
+        win.h \
+    figura.h \
+    area.h
